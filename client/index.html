@@ -1,314 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Student Portal - Student Challenge</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      background: #f4f6f9;
-      color: #333;
-    }
+  <title>Campus Connect Portal</title>
 
-    .container {
-      max-width: 650px;
-      margin: 0 auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-
-    .card {
-      border: 1px solid #e0e0e0;
-      padding: 15px;
-      margin-bottom: 15px;
-      border-radius: 6px;
-      background: #fafafa;
-    }
-
-    button {
-      background: #007bff;
-      color: white;
-      border: none;
-      padding: 8px 14px;
-      border-radius: 4px;
-      cursor: pointer;
-      margin-right: 5px;
-    }
-
-    button:hover {
-      background: #0056b3;
-    }
-
-    a {
-      color: #007bff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  </style>
 </head>
 
 <body>
 
-  <div class="container">
+  <!-- ==================== NAVBAR ==================== -->
+  <header class="navbar">
+    <div class="university-brand">
 
-    <h2>🎓 Student Performance Portal</h2>
+      <div class="rv-logo">
+        RV
+      </div>
 
-    <p>Complete the JavaScript tasks below.</p>
-
-
-    <!-- Task 1 -->
-    <div class="card">
-
-      <h3>1. Student Summary (Variables, Types & Operators)</h3>
-
-      <button onclick="displaySummary()">
-        Load Student Profile
-      </button>
-
-      <div id="profileOutput" style="margin-top: 10px;">
-        Click button to display...
+      <div class="university-text">
+        <h2>RV UNIVERSITY®</h2>
+        <p>School of Computer Science &amp; Engineering</p>
       </div>
 
     </div>
 
+    <div class="nav-buttons">
+      <a href="#login" class="nav-login">Login</a>
+      <a href="#register" class="nav-register">Register</a>
+    </div>
+  </header>
 
-    <!-- Task 2 -->
-    <div class="card">
 
-      <h3>2. Batch Grade Evaluator (Loops & Switch)</h3>
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero-section">
 
-      <button onclick="evaluateScores()">
-        Evaluate Batch Marks
-      </button>
+    <div class="hero-content">
 
-      <div id="batchOutput" style="margin-top: 10px;">
+      <div class="course-badge">
+        CS3301 - FULL STACK DEVELOPMENT
       </div>
 
-    </div>
-
-
-    <!-- Task 3 -->
-    <div class="card">
-
-      <h3>3. Attendance Counter (Closure & Arrow Function)</h3>
-
-      <button id="attendanceBtn">
-        Mark Present (+1)
-      </button>
-
-      <p id="attendanceDisplay">
-        Total Attendance: 0
-      </p>
-
-    </div>
-
-
-    <!-- Task 4 -->
-    <div class="card">
-
-      <h3>4. Quick Alerts & Navigation</h3>
-
-      <button onclick="triggerAlerts()">
-        Send Announcement
-      </button>
+      <h1>CAMPUS CONNECT PORTAL</h1>
 
       <p>
-        <a href="page2.html">
-          Go to Registration Form →
+        Connecting Students, Faculty, and Administrators on a Single
+        Digital Platform.
+      </p>
+
+      <a href="#portals" class="explore-button">
+        Explore User Portals →
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================== CAMPUS HIGHLIGHTS ==================== -->
+  <section class="highlights-section">
+
+    <div class="section-heading">
+      <h2>Campus Life &amp; Portal Highlights</h2>
+
+      <p>
+        Experience academic management simplified through modern technology.
+      </p>
+    </div>
+
+
+    <!-- CAMPUS CAROUSEL -->
+    <div class="campus-carousel">
+
+      <button
+        class="carousel-btn carousel-prev"
+        onclick="changeCampus(-1)"
+        aria-label="Previous campus image"
+      >
+        ‹
+      </button>
+
+      <div class="campus-display">
+
+        <div class="campus-image campus-image-1">
+          <div class="campus-overlay">
+            <span>University Campus</span>
+          </div>
+        </div>
+
+        <div class="campus-caption">
+          <span id="campus-title">Modern University Infrastructure</span>
+        </div>
+
+      </div>
+
+      <button
+        class="carousel-btn carousel-next"
+        onclick="changeCampus(1)"
+        aria-label="Next campus image"
+      >
+        ›
+      </button>
+
+    </div>
+
+    <div class="carousel-dots">
+      <span class="dot active-dot" onclick="showCampus(0)"></span>
+      <span class="dot" onclick="showCampus(1)"></span>
+      <span class="dot" onclick="showCampus(2)"></span>
+    </div>
+
+  </section>
+
+
+  <!-- ==================== PORTAL CARDS ==================== -->
+  <section id="portals" class="portal-section">
+
+    <div class="section-heading">
+      <h2>Choose Your Portal View</h2>
+    </div>
+
+
+    <div class="portal-cards">
+
+
+      <!-- STUDENT PORTAL -->
+      <div class="portal-card student-card">
+
+        <div class="portal-icon">
+          🧑‍🎓
+        </div>
+
+        <h3>Student Portal</h3>
+
+        <ul>
+          <li>View Notices &amp; Events</li>
+          <li>Submit Assignments</li>
+          <li>Track Attendance</li>
+          <li>Update Profile</li>
+        </ul>
+
+        <a href="#student" class="portal-button student-button">
+          Access Student View
         </a>
+
+      </div>
+
+
+      <!-- FACULTY PORTAL -->
+      <div class="portal-card faculty-card">
+
+        <div class="portal-icon">
+          👨‍🏫
+        </div>
+
+        <h3>Faculty Portal</h3>
+
+        <ul>
+          <li>Post Notices &amp; Events</li>
+          <li>Create Assignments</li>
+          <li>Mark Attendance</li>
+          <li>View Submissions</li>
+        </ul>
+
+        <a href="#faculty" class="portal-button faculty-button">
+          Access Faculty View
+        </a>
+
+      </div>
+
+
+      <!-- ADMIN PORTAL -->
+      <div class="portal-card admin-card">
+
+        <div class="portal-icon">
+          🛡️
+        </div>
+
+        <h3>Admin Portal</h3>
+
+        <ul>
+          <li>Manage Users</li>
+          <li>Manage Notices &amp; Events</li>
+          <li>View System Reports</li>
+          <li>System Settings</li>
+        </ul>
+
+        <a href="#admin" class="portal-button admin-button">
+          Access Admin View
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================== REACT AUTH SECTION ==================== -->
+  <section id="auth-section" class="auth-section">
+
+    <div id="auth-root"></div>
+
+  </section>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+
+    <div class="footer-content">
+
+      <h3>RV UNIVERSITY</h3>
+
+      <p>
+        Excellence in Education
+      </p>
+
+      <p class="footer-copy">
+        © 2026 Campus Connect Portal. All Rights Reserved.
       </p>
 
     </div>
 
-  </div>
+  </footer>
 
 
+  <!-- ==================== CAMPUS CAROUSEL SCRIPT ==================== -->
   <script>
 
-    // ==========================================
-    // TASK 1: Variables, Data Types & Operators
-    // ==========================================
+    const campusTitles = [
+      "Modern University Infrastructure",
+      "Vibrant Campus Life",
+      "Advanced Learning Environment"
+    ];
 
-    function displaySummary() {
+    let currentCampus = 0;
 
-      // String variable
-      let studentName = "Likhith";
+    function showCampus(index) {
 
-      // Number variable
-      let marks = 85;
+      currentCampus = index;
 
-      // Boolean variable
-      let enrollmentStatus = true;
+      const title = document.getElementById("campus-title");
 
-      // Object variable
-      let studentInfo = {
-        id: "RVU2026001",
-        course: "Data Science"
-      };
-
-      // Calculate total marks
-      let totalMarks = marks + 5;
-
-      // Ternary operator
-      let status = totalMarks >= 40 ? "PASS" : "FAIL";
-
-      // Display information
-      document.getElementById("profileOutput").innerHTML = `
-        <strong>Student Name:</strong> ${studentName}<br>
-        <strong>Marks:</strong> ${marks}<br>
-        <strong>Bonus Marks:</strong> 5<br>
-        <strong>Total Marks:</strong> ${totalMarks}<br>
-        <strong>Enrollment Status:</strong> ${enrollmentStatus}<br>
-        <strong>Student ID:</strong> ${studentInfo.id}<br>
-        <strong>Course:</strong> ${studentInfo.course}<br>
-        <strong>Result:</strong> ${status}
-      `;
-    }
-
-
-    // ==========================================
-    // TASK 2: Control Flow (Loops & Switch)
-    // ==========================================
-
-    function evaluateScores() {
-
-      let scores = [92, 45, 35, 78, 88];
-
-      let output = document.getElementById("batchOutput");
-
-      // Clear previous content
-      output.innerHTML = "";
-
-      // For loop
-      for (let i = 0; i < scores.length; i++) {
-
-        let score = scores[i];
-
-        // Skip mark 35
-        if (score === 35) {
-          continue;
-        }
-
-        let grade;
-
-        // Switch statement
-        switch (true) {
-
-          case score >= 90:
-            grade = "Grade A";
-            break;
-
-          case score >= 70:
-            grade = "Grade B";
-            break;
-
-          default:
-            grade = "Grade C";
-        }
-
-        // Append result to DOM
-        output.innerHTML += `
-          <p>
-            Student ${i + 1}: 
-            <strong>${score}</strong> marks -
-            <strong>${grade}</strong>
-          </p>
-        `;
+      if (title) {
+        title.textContent = campusTitles[currentCampus];
       }
 
-      output.innerHTML += `
-        <p>
-          <strong>Note:</strong> Mark 35 was skipped because it was a failed re-test.
-        </p>
-      `;
-    }
+      const dots = document.querySelectorAll(".dot");
 
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("active-dot", i === currentCampus);
+      });
 
-    // ==========================================
-    // TASK 3: Closures & Arrow Functions
-    // ==========================================
+      const campusImage = document.querySelector(".campus-image");
 
-    // Outer function
-    function createTracker() {
-
-      // Private variable
-      let count = 0;
-
-      // Inner function
-      return function () {
-
-        count++;
-
-        return count;
-      };
-    }
-
-
-    // Store returned inner function
-    const attendanceTracker = createTracker();
-
-
-    // Arrow function for button click
-    document.getElementById("attendanceBtn").onclick = () => {
-
-      // Call closure
-      let attendance = attendanceTracker();
-
-      // Update page using innerText
-      document.getElementById("attendanceDisplay").innerText =
-        `Total Attendance: ${attendance}`;
-    };
-
-
-    // ==========================================
-    // TASK 4: Popup Boxes
-    // ==========================================
-
-    function triggerAlerts() {
-
-      // Alert message
-      alert("📢 Campus Connect Announcement!");
-
-      // Confirmation box
-      let leavePage = confirm(
-        "Do you want to leave the page?"
-      );
-
-      // If user confirms
-      if (leavePage) {
-
-        // Ask for user input
-        let userName = prompt(
-          "Please enter your name:"
-        );
-
-        // Display input
-        if (userName) {
-
-          alert(
-            "Thank you, " + userName + "!"
-          );
-
-        } else {
-
-          alert(
-            "No name was entered."
-          );
-        }
-
-      } else {
-
-        alert(
-          "You chose to stay on the page."
-        );
+      if (campusImage) {
+        campusImage.className =
+          "campus-image campus-image-" + (currentCampus + 1);
       }
     }
+
+
+    function changeCampus(direction) {
+
+      currentCampus =
+        (currentCampus + direction + campusTitles.length)
+        % campusTitles.length;
+
+      showCampus(currentCampus);
+    }
+
+
+    // Smooth scrolling for portal section
+    document
+      .querySelector(".explore-button")
+      ?.addEventListener("click", function (event) {
+
+        event.preventDefault();
+
+        document
+          .getElementById("portals")
+          ?.scrollIntoView({
+            behavior: "smooth"
+          });
+
+      });
 
   </script>
+
+
+  <!-- ==================== REACT ==================== -->
+  <script type="module" src="/src/main.jsx"></script>
 
 </body>
 </html>
